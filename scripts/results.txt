@@ -1,0 +1,5 @@
+Row indexes of the path:
+1 1 1 1 2 
+
+The path value:
+15
