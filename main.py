@@ -20,6 +20,8 @@ while True:
     if option == 3:
         print("Bye!\n")
         quit(0)
+    if option == 1 or 2:
+        test.modify_field()
     p.set_paths(test)
     p.display_results(test)
     p.results_to_file()

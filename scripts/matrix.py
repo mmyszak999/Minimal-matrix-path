@@ -19,11 +19,8 @@ class Matrix:
         print(self.matrix)
 
     def check_dimensions(self):
-        self.matrix = numpy.array(self.matrix)
         if self.x < 2 or self.y < 2:
             raise Exception("\nMatrix has to have 2 columns or 2 rows at least!\n")
-        if self.x != self.matrix.shape[0] or self.y != self.matrix.shape[1]:
-            raise Exception("\nReal dimensions differ from typed/current dimensions!\n")
         return True
 
     def set_dimensions(self):
@@ -34,16 +31,32 @@ class Matrix:
 
     def draw_matrix(self):
         self.set_dimensions()
-        temp = numpy.matrix([[randint(0, 9) for a in range(self.y)] for b in range(self.x)])
+        temp = numpy.array([[randint(0, 9) for a in range(self.y)] for b in range(self.x)])
         self.matrix = temp
         return self.matrix
+
+    def modify_field(self):
+        self.matrix = numpy.array(self.matrix)
+        while True:
+            loop = int(input("\nIf you want to modify another field - pick 1\n"
+                             "If you want to stop - pick 2\n"))
+            if loop == 1:
+                n_row = int(input("Type the index of the row you want to modify:\n"))
+                n_column = int(input("Type the index of the column you want to modify:\n"))
+                print(f"Current field value: {self.matrix[n_row, n_column]}")
+                n_value = int(input("Pick new field value:\n"))
+                self.matrix[n_row, n_column] = n_value
+                self.display_matrix()
+            else:
+                break
 
     def correct_dimensions(self, path=file_path, mat_from_file=True):
         if mat_from_file is False:
             self.matrix = numpy.array(self.matrix)
             self.y, self.x = self.matrix.shape[1], self.matrix.shape[0]
+            print(self.y, self.x)
             self.check_dimensions()
-        else:
+        if mat_from_file is True:
             file = open(path)
             row = file.readline().split(" ")
             self.y = len(row)
@@ -53,7 +66,7 @@ class Matrix:
         return True
 
     def load_matrix(self, path=file_path):
-        self.correct_dimensions(path=path)
+        self.correct_dimensions(path=path, mat_from_file=True)
         file = open(path)
         for i in range(int(self.x)):
             row = file.readline().split(" ")
