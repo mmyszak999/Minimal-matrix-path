@@ -1,5 +1,1 @@
-Row indexes of the path:
-3 2 2 3 4 3 3 
 
-The path value:
-8
