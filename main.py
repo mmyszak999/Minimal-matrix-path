@@ -1,5 +1,6 @@
 from scripts.path import *
 from scripts.matrix import *
+os.system('color')
 
 
 print("Let's start!\n")
