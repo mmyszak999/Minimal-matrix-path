@@ -1,8 +1,10 @@
 # What the code does?
-  Code is responsible for setting the matrix path consisting of the lowest possible sum of the fields.
+  Code is responsible for setting the matrix path consisting of the lowest possible sum of the fields.  
+  Every possible path is being checked in order to find the one with the lowest field sum   
+  
  ## Some explanation how the path is being set:
 This is matrix of digits:  
-**3** 4 1 2 8 6  
+**3** 4 1 2 8 6   
 6 1 8 2 7 4  
 5 9 3 9 9 5   
 8 4 1 3 2 6  
@@ -20,7 +22,7 @@ If we are in the last row, move to a lower row equals to being in the first row
 So in the first move, we can go to three fields:  
 **7** (treated as an upper row move)  
 **4** (in the same row)  
-**1** (an lower row move)
+**1** (a lower row move)
 
 That step is repeated until a path is in the last column.
 
@@ -33,7 +35,8 @@ A path result contain the sum of the path fields (numbers) and list of fields ro
 1. Download the .zip file with files from GitHub
 2. Unzip that file  
 3. Run command line (CMD)  
-4. In command line, go to the directory where the code is, using commands (**cd.. and cd file_name)**
-5. 
-
-
+4. In command line, go to the directory where the code is, using commands (**cd..   and cd file_name)**  
+5. Type command in CMD: **pip install numpy**  
+6. Type command in CMD: **pip install termcolor**  
+7. In order to run the python script type in CMD: **py main.py** (make sure you have python installed)  
+8. That's all  
