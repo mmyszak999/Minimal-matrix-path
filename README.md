@@ -30,13 +30,10 @@ A path result contain the sum of the path fields (numbers) and list of fields ro
 
 
 
-
-# How to run the script in command line (Windows CMD)?
-1. Download the .zip file with files from GitHub
-2. Unzip that file  
-3. Run command line (CMD)  
-4. In command line, go to the directory where the code is, using commands (**cd..   and cd file_name)**  
-5. Type command in CMD: **pip install numpy**  
-6. Type command in CMD: **pip install termcolor**  
-7. In order to run the python script type in CMD: **py main.py** (make sure you have python installed)  
-8. That's all  
+## How to get the code repository with Windows CMD? ##
+1. Open Command Line
+2. Type: git clone https://github.com/mmyszak999/Minimal-matrix-path
+3. Enter the directory
+4. Type: pip install numpy
+5. Type: pip install termcolor
+6. Run the code by typing: py main.py
